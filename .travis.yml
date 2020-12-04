@@ -46,7 +46,7 @@ script:
 #Deploy the resulting artifact to GitHub Releases
 deploy:
  provider: releases
- api_key: "9c900c7816333b043d29b968454dddfcbfa8ef72"
+ api_key: "GITHUB OAUTH TOKEN"
  file: build/graal/checksum-$TRAVIS_OS_NAME.zip
  skip_cleanup: true
  on:
