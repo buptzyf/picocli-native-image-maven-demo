@@ -47,7 +47,7 @@ script:
 deploy:
  provider: releases
  api_key: $GITHUB_OAUTH_TOKEN
- file: build/graal/checksum-$TRAVIS_OS_NAME.zip
+ file: target/picocli-native-image-maven-demo-$TRAVIS_OS_NAME.zip
  skip_cleanup: true
  on:
    tags: true
