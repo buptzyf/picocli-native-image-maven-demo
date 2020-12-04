@@ -1,4 +1,4 @@
-#language: java
+language: java
 #jdk:
 #  - openjdk11
 
@@ -46,7 +46,7 @@ script:
 #Deploy the resulting artifact to GitHub Releases
 deploy:
  provider: releases
- token: $GITHUB_OAUTH_TOKEN
+ api_key: $GITHUB_OAUTH_TOKEN
  file: build/graal/checksum-$TRAVIS_OS_NAME.zip
  skip_cleanup: true
  on:
