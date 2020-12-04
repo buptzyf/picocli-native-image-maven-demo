@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjd11
+  - openjdk11
 
 jobs:
   include:
