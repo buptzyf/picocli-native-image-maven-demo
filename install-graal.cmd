@@ -4,8 +4,8 @@ pushd "%~dp0"
 
 @REM install GraalVM
 
-set JAVA_VERSION=11
-set GRAAL_VERSION=19.3.0.2
+set JAVA_VERSION=8
+set GRAAL_VERSION=19.3.4
 set GRAAL_FILE=graalvm-ce-java%JAVA_VERSION%-windows-amd64-%GRAAL_VERSION%.zip
 set GRAAL_19_2_URL=https://github.com/oracle/graal/releases/download/vm-%GRAAL_VERSION%
 set DOWNLOAD_URL=https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-%GRAAL_VERSION%/%GRAAL_FILE%
