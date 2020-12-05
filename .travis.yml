@@ -14,6 +14,7 @@ jobs:
 
 before_install:
   - if [ $TRAVIS_OS_NAME = windows ]; then choco install windows-sdk-7.1 kb2519277 zip unzip ; fi
+  - refreshenv
   # adding $HOME/.sdkman to cache would create an empty directory, which interferes with the initial installation
   - "[[ -d $HOME/.sdkman/ ]] && [[ -d $HOME/.sdkman/bin/ ]] || rm -rf $HOME/.sdkman/"
   - curl -sL https://get.sdkman.io | bash
