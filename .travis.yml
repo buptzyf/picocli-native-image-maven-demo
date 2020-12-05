@@ -4,10 +4,10 @@ language: java
 
 jobs:
   include:
-    #- os: linux
-     # env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-    #- os: osx
-     # env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+    - os: linux
+      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+    - os: osx
+      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
     - os: windows
       language: shell
       env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
