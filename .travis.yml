@@ -24,8 +24,7 @@ before_install:
   - "source $HOME/.sdkman/bin/sdkman-init.sh"
 
 install:
-#  - if [ $TRAVIS_OS_NAME = windows ]; then choco install windows-sdk-7.1 kb2519277; fi
-#  - if [ $TRAVIS_OS_NAME = windows ]; then cmd //C RefreshEnv.cmd; fi
+  - if [ $TRAVIS_OS_NAME = windows ]; then choco install windows-sdk-7.1 kb2519277; fi
   - sdk current java
   - echo $JAVA_HOME
   - sdk list java 
@@ -40,6 +39,7 @@ before_script:
   - chmod +x mvnw
 script:
   - java -version
+  - if [ $TRAVIS_OS_NAME = windows ]; then cmd //C RefreshEnv.cmd; fi
   - if [ $TRAVIS_OS_NAME = windows ]; then ./build.bat; fi
 #  - ./mvnw --version; ./mvnw -DbuildArgs=${BUILD_ARGS} -Dmaven.test.failure.ignore=true clean verify
   - if [ $TRAVIS_OS_NAME  = windows ]; then "$JAVA_HOME/bin/jar.exe" -cMvf target/checksum-$TRAVIS_OS_NAME.zip target/picocli-native-image-maven-demo.exe ; fi
