@@ -25,9 +25,9 @@ class CheckSum implements Callable<Integer> {
 
     public static void main(String... args) {
         int exitCode;
-        try (AnsiConsole ansi = AnsiConsole.windowsInstall()) {
+        //try (AnsiConsole ansi = AnsiConsole.windowsInstall()) {
             exitCode = new CommandLine(new CheckSum()).execute(args);
-        }
+        //}
         System.exit(exitCode);
     }
 
