@@ -41,7 +41,6 @@ script:
   - java -version
   - if [ $TRAVIS_OS_NAME = windows ]; then cmd //C RefreshEnv.cmd; fi
 #  - if [ $TRAVIS_OS_NAME = windows ]; then ./build.bat; fi
-  - set MAVEN_OPTS=--add-exports=java.base/jdk.internal.module=ALL-UNNAMED
   - ./mvnw --version; ./mvnw -DbuildArgs=${BUILD_ARGS} -Dmaven.test.failure.ignore=true clean verify
   - if [ $TRAVIS_OS_NAME  = windows ]; then "$JAVA_HOME/bin/jar.exe" -cMvf target/checksum-$TRAVIS_OS_NAME.zip target/picocli-native-image-maven-demo.exe ; fi
   - if [ $TRAVIS_OS_NAME != windows ]; then zip -v target/picocli-native-image-maven-demo-$TRAVIS_OS_NAME.zip target/picocli-native-image-maven-demo ; fi
