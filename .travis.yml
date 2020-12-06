@@ -4,10 +4,10 @@ language: java
 
 jobs:
   include:
-    - os: linux
-      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-    - os: osx
-      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+#    - os: linux
+#      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+#    - os: osx
+#      env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
     - os: windows
       language: shell
       env: JAVA_HOME="$HOME/.sdkman/candidates/java/current"
@@ -32,7 +32,7 @@ install:
   - env
   - echo $JAVA_HOME
   - ls $JAVA_HOME/bin/
-  - if [ $TRAVIS_OS_NAME = windows ]; then gu install native-image ; fi
+  - if [ $TRAVIS_OS_NAME = windows ]; then gu.cmd install native-image ; fi
   - if [ $TRAVIS_OS_NAME != windows ]; then gu install native-image ; fi
   - if [ $TRAVIS_OS_NAME != windows ]; then native-image --version ; fi
 
